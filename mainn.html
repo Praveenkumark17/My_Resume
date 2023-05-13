@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>validation</title>
+    <meta name="viewport" content="width=device-width"> 
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        body
+        {
+            background-image: url(manuel-hodel-mUHq0zaS6BY-unsplash.jpg);
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition-duration: 3s;
+            display: flex;
+        }
+        h1
+        {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(93, 173, 226);
+        }
+        h3
+        {
+            margin-left: 20px;
+            margin-bottom: 5px;
+            color: rgb(203, 234, 245);
+        }
+        #A
+        {
+            background-color:rgb(0,0,0,.4);
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 5px 10px 18px #000000;
+            transition-duration: 3s;
+        }
+        #form
+        {
+            position: relative;
+        }
+        #form #email,#name,#password,#repassword
+        {
+            width: 300px;
+            margin-left: 20px;
+            margin-right: 20px;
+            background: #292929;
+            outline: none;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            color: #fff;
+            font-style: 18px;
+        }
+        #mobail
+        {
+            width: 215px;
+            margin-right: 20px;
+            background: #292929;
+            outline: none;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            color: #fff;
+            font-style: 18px;
+        }
+        #drop
+        {
+            cursor: pointer;
+            width: 70px;
+            margin-left: 20px;
+            margin-right: 10px;
+            background: #292929;
+            outline: none;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            color: #fff;
+            font-style: 18px;
+        }
+        #form .inputbox
+        {
+            position: relative;
+        }
+        #text,#text1,#text2,#text3,#text4
+        {
+            display: block;
+            color: #000;
+            font-weight: italic;
+            margin-left: 20px;
+            padding: 5px;
+        }
+        #form.invalid .inputbox:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(invalid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         #form.valid .inputbox:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(valid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         #form .inputbox1
+        {
+            position: relative;
+        }
+        #form.invalid1 .inputbox1:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(invalid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         #form.valid1 .inputbox1:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(valid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         #form .inputbox2
+        {
+            position: relative;
+        }
+        #form.invalid2 .inputbox2:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(invalid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         #form.valid2 .inputbox2:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(valid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         #form .inputbox3
+        {
+            position: relative;
+        }
+        #form.invalid3 .inputbox3:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(invalid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         #form.valid3 .inputbox3:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(valid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         #form .inputbox4
+        {
+            position: relative;
+        }
+        #form.invalid4 .inputbox4:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(invalid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+        #form.valid4 .inputbox4:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(valid.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+        #form.warning .inputbox4:before
+        {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top:8px;
+            width: 20px;
+            height: 20px;
+            background: url(warning.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+         .submit
+        {
+            padding: 12px 20px;
+            margin-left: 140px;
+            border:none;
+            color: white;
+            background: gray;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+       .submit1
+        {
+            padding: 12px 20px;
+            border:none;
+            color: black;
+            background: white;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            transition:all .3s ease-in;
+            cursor: pointer;
+        }
+        /*.submit1:hover
+        {
+            background: transparent;
+            color: #7f00ff;
+            border:2px solid #7f00ff;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="A">
+        <h1>Fill The Form</h1>
+        
+        <form id="form" class="form" action="resume.html">
+            <span id="texts"></span>
+            <h3>Name:</h3>
+            <div class="inputbox2">
+            <input type="text" name="" id="name" placeholder="Enter Your Name" onkeydown="validation2()" oninput="validateForm()">
+            <span id="text2"></span>
+            </div><br>
+            <h3>Mobail Number:</h3>
+            <div class="inputbox1">
+            <select id="drop">
+                <option>+91</option>
+                <option>+57</option>
+                <option>+61</option>
+                <option>+880</option>
+            </select>
+            <input type="text" name="" id="mobail" placeholder="Enter mobile Number" onkeydown="validation1()" oninput="validateForm()">
+            <span id="text1"></span>
+            </div><br>
+            <h3>Email:</h3>
+            <div class="inputbox">
+            <input type="text" name="" id="email" placeholder="Enter Email Address" onkeydown="validation()" oninput="validateForm()">
+            <span id="text"></span>
+            </div><br>
+             <h3>Password:</h3>
+            <div class="inputbox3">
+            <input type="password" name="" id="password" placeholder="Enter Your Password" onkeydown="validation3()" oninput="validateForm()">
+            <span id="text3"></span>
+            </div><br>
+            <h3>Confirm Password:</h3>
+            <div class="inputbox4">
+            <input type="password" name="" id="repassword" placeholder="Enter Your Confirm Password" onkeyup="check()" oninput="validateForm()">
+            <span id="text4"></span>
+            <!-- <h3>Show Password</h3> -->
+            <label class="checkbox-inline" style="color: #fff;"><input type="checkbox" value="Show password" onclick="myFunction()" style="margin-left: 20px;">Show Password</label>
+            
+            </div><br>
+            <button id="btn" type="submit" class="submit" onclick="parent.location='resume.html'" >submit</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        var pattern1 = /^[6-9]{1}[0-9]{9}$/;
+        var pattern2 = /^[a-zA-Z0-9'.\s]{3,20}$/;
+        var pattern3 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20}/;
+        setTimeout(validateForm,500);
+        
+        function myFunction() 
+        {
+          var y = document.getElementById("password");
+          if (y.type == "password") 
+          {
+            y.type = "text";
+          } else 
+          {
+            y.type = "password";
+          }
+          var x = document.getElementById("repassword");
+          if (x.type == "password") 
+          {
+            x.type = "text";
+          } else 
+          {
+            x.type = "password";
+          }
+        }
+
+        function validation() 
+        {
+            setTimeout(validation,500);
+            var text = document.getElementById("text");
+            var email = document.getElementById("email").value;
+            var form = document.getElementById("form");
+            
+
+            if(email.match(pattern))
+            {
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "Your Email Address valid.";
+                text.style.color = "#00ff00";
+            }
+            else
+            {
+                form.classList.add("invalid");
+                form.classList.remove("valid");
+                text.innerHTML = "Please Enter Valid Email Address";
+                text.style.color = "#ff0000";
+            }
+            
+        }
+        
+        function validation1() 
+        {
+            setTimeout(validation1,500);
+            var form = document.getElementById("form");
+            var mobail = document.getElementById("mobail").value;
+            var text1 = document.getElementById("text1");
+            
+
+            if(mobail.match(pattern1))
+            {
+                form.classList.add("valid1");
+                form.classList.remove("invalid1");
+                text1.innerHTML = "Your Mobail Number valid.";
+                text1.style.color = "#00ff00";
+            }
+            else
+            {
+                form.classList.add("invalid1");
+                form.classList.remove("valid1");
+                text1.innerHTML = "Please Enter Valid Mobail Number";
+                text1.style.color = "#ff0000";
+            }
+            
+         }
+
+        function validation2() 
+        {
+            setTimeout(validation2,500);
+            var form = document.getElementById("form");
+            var name = document.getElementById("name").value;
+            var text2 = document.getElementById("text2");
+            
+
+            if(name.match(pattern2))
+            {
+                form.classList.add("valid2");
+                form.classList.remove("invalid2");
+                text2.innerHTML = "Your Name valid.";
+                text2.style.color = "#00ff00";
+            }
+            else
+            {
+                form.classList.add("invalid2");
+                form.classList.remove("valid2");
+                text2.innerHTML = "Please Enter Valid Name";
+                text2.style.color = "#ff0000";
+            }
+            
+         }
+        function validation3() 
+        {
+            setTimeout(validation3,500);
+            var form = document.getElementById("form");
+            var password = document.getElementById("password").value;
+            var text3 = document.getElementById("text3");
+            
+
+            if(password.match(pattern3))
+            {
+                form.classList.add("valid3");
+                form.classList.remove("invalid3");
+                text3.innerHTML = "Your Password valid.";
+                text3.style.color = "#00ff00";
+            }
+            else
+            {
+                form.classList.add("invalid3");
+                form.classList.remove("valid3");
+                text3.innerHTML = "Please Enter Valid Password";
+                text3.style.color = "#ff0000";
+            }
+            
+         }
+          var check = function()
+          {
+            setTimeout(check,500);
+            var form = document.getElementById("form");
+            var repassword = document.getElementById("repassword").value;
+            var text4 = document.getElementById("text4");
+
+            if(document.getElementById('password').value ==
+            document.getElementById('repassword').value && repassword.match(pattern3))
+            {
+                form.classList.add("valid4");
+                form.classList.remove("invalid4");
+                form.classList.remove("warning");
+                text4.innerHTML = "Your Password is Valid and Matched.";
+                text4.style.color = "#00ff00";
+            }
+            else if(repassword.match(pattern3))
+            {
+                form.classList.add("warning");
+                form.classList.remove("valid4");
+                form.classList.remove("invalid4");
+                text4.innerHTML = "Your Password is valid and Does't Matched.";
+                text4.style.color = "yellow";
+            }
+            else
+            {
+                form.classList.add("invalid4");
+                form.classList.remove("valid4");
+                form.classList.remove("warning");
+                text4.innerHTML = "Your Password Invalid";
+                text4.style.color = "#ff0000";
+            }
+          }
+        var name = document.getElementById('name');
+        var mobail = document.getElementById('mobail');
+        var email = document.getElementById('email');
+        var password = document.getElementById('password');
+        var repassword = document.getElementById('repassword');
+        var button = document.querySelector('.submit');
+        var form1 = document.querySelector('.form');
+        var texts = document.getElementById('texts');
+
+        function validateForm()
+        { 
+           var btn = document.getElementById("btn");
+            if (name.value !== "" && mobail.value !== "" && email.value !== "" && password.value !== "" && repassword.value !== "" && pattern.test(email.value) && pattern1.test(mobail.value) && pattern2.test(name.value) && pattern3.test(password.value) && (password.value == repassword.value))
+            {
+               //but.className = "submit1";
+               //but.style.color = "#000000";
+               button.style.backgroundColor="green";
+               button.disabled = false;
+            } 
+            else 
+            {
+               //but.className = "submit";
+               button.style.backgroundColor="red";
+               button.disabled = true;
+            }
+        }
+        // form1.addEventListener('submit', function(event){
+        //      event.preventDefault();
+        //      console.log("submitted")
+
+        // })
+    </script>
+
+</body>
+</html>
